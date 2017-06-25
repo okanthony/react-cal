@@ -5,14 +5,18 @@ module.exports = {
     path: './src/main.js'
   },
   output: {
-    path: '/build',
+    path: __dirname+'/build',
     filename: 'bundle.js'
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.scss$/,
-        loaders: ["style-loader", "css-loader", "sass-loader"]
+        use: [
+          "style-loader",
+          "css-loader",
+          "sass-loader"
+        ]
       },
       {
         test: /\.jsx?$/,
@@ -21,13 +25,9 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ],
   devtool: 'eval-source-map',
   devServer: {
     contentBase: './build',
-    inline: true,
-    hot: true
+    inline: true
   }
 }
