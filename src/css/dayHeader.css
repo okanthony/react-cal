@@ -1,0 +1,21 @@
+/* flex item of day container */
+/* also flex container for span tags */
+.dayHeader {
+  color: white;
+  font-weight: 100;
+  letter-spacing: 2px;
+  text-decoration: none;
+  background: rgba(0,0,0,0.2);
+  display: flex;
+  text-align: center;
+  flex: 1;
+  /* 'Items' is now span tag */
+  align-items: center;
+}
+
+/* flex item of day-header */
+.dayHeader span {
+  /*spans are normally inline*/
+  display: block;
+  width: 100%;
+}

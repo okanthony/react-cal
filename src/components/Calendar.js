@@ -1,5 +1,8 @@
 import React from 'react';
+//components
 import DayContainer from './DayContainer'
+//styles
+import styles from '../css/calendar.css'
 
 const Calendar = () => {
   const days = [
@@ -15,7 +18,6 @@ const Calendar = () => {
   let dayContainers = days.map(day => {
     return (
       <DayContainer
-        className='day-container'
         id={`${day.toLowerCase()}-container`}
         day={day}
         key={days.indexOf(day) + 1}
@@ -24,7 +26,7 @@ const Calendar = () => {
   });
 
   return (
-    <div className='calendar'>
+    <div className={styles.calendar}>
       {dayContainers}
     </div>
   );

@@ -1,0 +1,8 @@
+/* flex item of day container */
+.timeBlock {
+  flex: 2;
+  text-align: center;
+  border-top: 1px solid white;
+  background: rgba(0,0,0,0.2);
+  /*height: 40px;*/
+}

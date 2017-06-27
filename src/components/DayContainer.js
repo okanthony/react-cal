@@ -1,6 +1,9 @@
 import React from 'react';
+//components
 import DayHeader from './DayHeader';
 import TimeBlock from './TimeBlock';
+//styles
+import styles from '../css/dayContainer.css'
 
 const DayContainer = (props) => {
   let times = [
@@ -14,7 +17,6 @@ const DayContainer = (props) => {
   let timeBlocks = times.map(time => {
     return (
       <TimeBlock
-        className='time-block'
         time={time}
         key={times.indexOf(time) + 10}
       />
@@ -22,9 +24,8 @@ const DayContainer = (props) => {
   });
 
   return (
-    <div>
+    <div className={styles.dayContainer}>
       <DayHeader
-        className='day-header'
         {...props}
       />
       {timeBlocks}

@@ -1,9 +1,12 @@
 import React from 'react';
-import Calendar from './Components/Calendar';
+//components
+import Calendar from './components/Calendar';
+//styles
+import styles from './css/app.css';
 
 const App = () => {
   return (
-    <div className='wrapper'>
+    <div className={styles.wrapper}>
       <Calendar />
     </div>
   );

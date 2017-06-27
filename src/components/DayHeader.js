@@ -1,12 +1,23 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+//styles
+import styles from '../css/dayHeader.css'
 
 const DayHeader = (props) => {
   return (
     <div
-      id={`${props.day.toLowerCase()}-header`}>
-      {props.day}
+      className={styles.dayHeader}
+      id={`${props.day.toLowerCase()}-header`}
+    >
+      <span>
+        {props.day}
+      </span>
     </div>
   );
 };
 
 export default DayHeader;
+
+DayHeader.PropTypes = {
+  day: PropTypes.string
+}

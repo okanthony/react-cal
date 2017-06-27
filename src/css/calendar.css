@@ -1,0 +1,8 @@
+.calendar {
+  display: flex;
+  flex-direction: row;
+}
+
+.calendar > * {
+  order: 9999;
+}
