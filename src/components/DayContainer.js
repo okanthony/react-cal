@@ -1,12 +1,12 @@
 import React from 'react';
-//components
+// components
 import DayHeader from './DayHeader';
 import TimeBlock from './TimeBlock';
-//styles
-import styles from '../css/dayContainer.css'
+// styles
+import styles from '../css/dayContainer.css';
 
 const DayContainer = (props) => {
-  let times = [
+  const times = [
     '5:00PM',
     '5:30PM',
     '6:00PM',
@@ -14,13 +14,13 @@ const DayContainer = (props) => {
     '7:00PM'
   ]
 
-  let timeBlocks = times.map(time => {
+  const timeBlocks = times.map(time => {
     return (
       <TimeBlock
         time={time}
         key={times.indexOf(time) + 10}
       />
-    )
+    );
   });
 
   return (

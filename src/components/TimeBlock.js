@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-//styles
-import styles from '../css/timeBlock.css'
+// styles
+import styles from '../css/timeBlock.css';
 
 const TimeBlock = (props) => {
   return (
@@ -15,4 +15,4 @@ export default TimeBlock;
 
 TimeBlock.PropTypes = {
   time: PropTypes.string
-}
+};

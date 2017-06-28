@@ -1,11 +1,11 @@
-var webpack = require('webpack');
+let webpack = require('webpack');
 
 module.exports = {
   entry: {
     path: './src/main.js'
   },
   output: {
-    path: __dirname+'/build',
+    path: `${__dirname}/build`,
     filename: 'bundle.js'
   },
   module: {
@@ -24,7 +24,16 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
-      }
+      },
+      {
+          test: /\.js$/,
+          enforce: 'pre',
+
+          loader: 'eslint-loader',
+          options: {
+            emitWarning: true,
+          },
+        }
     ]
   },
   devtool: 'eval-source-map',

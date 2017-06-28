@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-//styles
-import styles from '../css/dayHeader.css'
+// styles
+import styles from '../css/dayHeader.css';
 
 const DayHeader = (props) => {
   return (
@@ -20,4 +20,4 @@ export default DayHeader;
 
 DayHeader.PropTypes = {
   day: PropTypes.string
-}
+};

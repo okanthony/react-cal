@@ -1,7 +1,7 @@
 import React from 'react';
-//components
+// components
 import Calendar from './components/Calendar';
-//styles
+// styles
 import styles from './css/app.css';
 
 const App = () => {
