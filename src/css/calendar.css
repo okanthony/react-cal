@@ -6,3 +6,9 @@
 .calendar > * {
   order: 9999;
 }
+
+@media all and (max-width: 550px) {
+  .calendar {
+    flex-direction: column;
+  }
+}

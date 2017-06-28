@@ -1,0 +1,9 @@
+.tabsContainer {
+  display: none;
+}
+
+@media all and (max-width: 550px) {
+  .tabsContainer {
+    display: flex;
+  }
+}
