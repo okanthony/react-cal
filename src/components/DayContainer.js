@@ -23,8 +23,10 @@ const DayContainer = (props) => {
     );
   });
 
+  var className = props.isHidden ? styles.hiddenDayContainer : styles.dayContainer;
+
   return (
-    <div className={styles.dayContainer}>
+    <div className={className}>
       <DayHeader
         {...props}
       />

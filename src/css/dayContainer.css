@@ -7,3 +7,11 @@ also a flex container itself */
   border: 1px solid white;
   height: 500px;
 }
+
+.hiddenDayContainer {
+  flex: 1;
+  flex-direction: column;
+  border: 1px solid white;
+  height: 500px;
+  display: none;
+}
