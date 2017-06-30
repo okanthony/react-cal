@@ -6,22 +6,22 @@ import TabsContainer from './components/TabsContainer';
 import styles from './css/app.css';
 
 const App = () => {
-  const days = [
-    'Sunday',
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday',
-  ];
+    const days = [
+        'Sunday',
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday'
+    ];
 
-  return (
-    <div className={styles.wrapper}>
-      <TabsContainer days={days} />
-      <Calendar days={days} />
-    </div>
-  );
+    return (
+        <div className={styles.wrapper}>
+            <TabsContainer days={days} />
+            <Calendar days={days} />
+        </div>
+    );
 };
 
 export default App;

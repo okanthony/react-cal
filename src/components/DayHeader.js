@@ -4,20 +4,20 @@ import PropTypes from 'prop-types';
 import styles from '../css/dayHeader.css';
 
 const DayHeader = (props) => {
-  return (
-    <div
-      className={styles.dayHeader}
-      id={`${props.day.toLowerCase()}-header`}
-    >
-      <span>
-        {props.day}
-      </span>
-    </div>
-  );
+    return (
+        <div
+            className={styles.dayHeader}
+            id={`${props.day.toLowerCase()}-header`}
+        >
+            <span>
+                {props.day}
+            </span>
+        </div>
+    );
 };
 
 export default DayHeader;
 
 DayHeader.propTypes = {
-  day: PropTypes.string.isRequired
+    day: PropTypes.string.isRequired
 };

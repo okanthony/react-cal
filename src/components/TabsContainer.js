@@ -6,25 +6,25 @@ import TabHeader from './TabHeader';
 import styles from '../css/tabsContainer.css';
 
 const TabsContainer = (props) => {
-  const tabHeaders = props.days.map((day) => {
-    return (
-      <TabHeader
-        id={`${day.toLowerCase()}-tab`}
-        day={day.slice(0, 3)}
-        key={props.days.indexOf(day) + 100}
-      />
-    );
-  });
+    const tabHeaders = props.days.map((day) => {
+        return (
+            <TabHeader
+                id={`${day.toLowerCase()}-tab`}
+                day={day.slice(0, 3)}
+                key={props.days.indexOf(day) + 100}
+            />
+        );
+    });
 
-  return (
-    <div className={styles.tabsContainer}>
-      {tabHeaders}
-    </div>
-  );
+    return (
+        <div className={styles.tabsContainer}>
+            {tabHeaders}
+        </div>
+    );
 };
 
 export default TabsContainer;
 
 TabsContainer.propTypes = {
-  days: PropTypes.arrayOf(PropTypes.string).isRequired
+    days: PropTypes.arrayOf(PropTypes.string).isRequired
 };

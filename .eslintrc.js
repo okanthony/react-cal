@@ -1,3 +1,6 @@
 module.exports = {
-    "extends": "airbnb"
+    "extends": "blackduck/react",
+    "rules": {
+        "react/jsx-filename-extension": "off"
+    }
 };

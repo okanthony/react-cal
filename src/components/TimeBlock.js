@@ -4,15 +4,15 @@ import PropTypes from 'prop-types';
 import styles from '../css/timeBlock.css';
 
 const TimeBlock = (props) => {
-  return (
-    <div className={styles.timeBlock}>
-      {props.time}
-    </div>
-  );
+    return (
+        <div className={styles.timeBlock}>
+            {props.time}
+        </div>
+    );
 };
 
 export default TimeBlock;
 
 TimeBlock.propTypes = {
-  time: PropTypes.string.isRequired
+    time: PropTypes.string.isRequired
 };
