@@ -13,6 +13,6 @@ const TimeBlock = (props) => {
 
 export default TimeBlock;
 
-TimeBlock.PropTypes = {
-  time: PropTypes.string
+TimeBlock.propTypes = {
+  time: PropTypes.string.isRequired
 };

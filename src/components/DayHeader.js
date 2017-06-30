@@ -18,6 +18,6 @@ const DayHeader = (props) => {
 
 export default DayHeader;
 
-DayHeader.PropTypes = {
-  day: PropTypes.string
+DayHeader.propTypes = {
+  day: PropTypes.string.isRequired
 };

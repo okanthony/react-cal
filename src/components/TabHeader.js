@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 // styles
 import styles from '../css/tabHeader.css';
 
@@ -13,3 +14,7 @@ const TabHeader = (props) => {
 };
 
 export default TabHeader;
+
+TabHeader.propTypes = {
+  day: PropTypes.string.isRequired
+};

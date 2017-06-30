@@ -1,40 +1,45 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 // components
 import DayContainer from './DayContainer';
 // styles
 import styles from '../css/calendar.css';
 
 class Calendar extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       isHidden: false
-    }
+    };
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     if (window.matchMedia('(max-width: 550px)').matches) {
-      this.setState({isHidden: true});
+      this.setState({ isHidden: true });
     }
+    window.addEventListener('resize', this.updateWindowDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions() {
+    let isHidden = false;
+    if (window.matchMedia('(max-width: 550px)').matches) {
+      isHidden = true;
+    }
+    this.setState({ isHidden: isHidden });
   }
 
   render() {
-    const days = [
-      'Sunday',
-      'Monday',
-      'Tuesday',
-      'Wednesday',
-      'Thursday',
-      'Friday',
-      'Saturday',
-    ];
-
-    const dayContainers = days.map((day) => {
+    const dayContainers = this.props.days.map((day) => {
       return (
         <DayContainer
           id={`${day.toLowerCase()}-container`}
           day={day}
-          key={days.indexOf(day) + 1}
+          key={this.props.days.indexOf(day) + 1}
           isHidden={day === 'Monday' ? false : this.state.isHidden}
         />
       );
@@ -46,6 +51,10 @@ class Calendar extends React.Component {
       </div>
     );
   }
-};
+}
 
 export default Calendar;
+
+Calendar.propTypes = {
+  days: PropTypes.arrayOf(PropTypes.string).isRequired
+};

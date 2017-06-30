@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 // components
 import DayHeader from './DayHeader';
 import TimeBlock from './TimeBlock';
@@ -12,9 +13,9 @@ const DayContainer = (props) => {
     '6:00PM',
     '6:30PM',
     '7:00PM'
-  ]
+  ];
 
-  const timeBlocks = times.map(time => {
+  const timeBlocks = times.map((time) => {
     return (
       <TimeBlock
         time={time}
@@ -23,7 +24,7 @@ const DayContainer = (props) => {
     );
   });
 
-  var className = props.isHidden ? styles.hiddenDayContainer : styles.dayContainer;
+  const className = props.isHidden ? styles.hiddenDayContainer : styles.dayContainer;
 
   return (
     <div className={className}>
@@ -36,3 +37,7 @@ const DayContainer = (props) => {
 };
 
 export default DayContainer;
+
+DayContainer.propTypes = {
+  isHidden: PropTypes.bool.isRequired
+};
