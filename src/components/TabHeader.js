@@ -5,9 +5,13 @@ import styles from '../css/tabHeader';
 
 const TabHeader = (props) => {
     return (
-        <a className={styles.tabHeader}>
+        <a
+            href='#'
+            className={styles.tabHeader}
+            onClick={props.onClick}
+        >
             <span>
-                {props.day}
+                {props.dayAbbrev}
             </span>
         </a>
     );
@@ -16,5 +20,5 @@ const TabHeader = (props) => {
 export default TabHeader;
 
 TabHeader.propTypes = {
-    day: PropTypes.string.isRequired
+    dayAbbrev: PropTypes.string.isRequired
 };

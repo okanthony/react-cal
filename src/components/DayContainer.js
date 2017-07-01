@@ -24,10 +24,15 @@ const DayContainer = (props) => {
         );
     });
 
-    const className = props.isHidden ? styles.hiddenDayContainer : styles.dayContainer;
+    let containerStyle = `${styles.dayContainer}`;
+    if (!props.tabClicked && props.day === 'Monday') {
+        containerStyle += ` ${styles.activeDayContainer}`;
+    } else if (!props.tabClicked) {
+        containerStyle += ` ${styles.hiddenDayContainer}`;
+    }
 
     return (
-        <div className={className}>
+        <div className={containerStyle}>
             <DayHeader
                 {...props}
             />
@@ -39,5 +44,6 @@ const DayContainer = (props) => {
 export default DayContainer;
 
 DayContainer.propTypes = {
-    isHidden: PropTypes.bool.isRequired
+    tabClicked: PropTypes.bool.isRequired,
+    day: PropTypes.string.isRequired
 };

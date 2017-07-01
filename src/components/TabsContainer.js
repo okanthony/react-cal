@@ -6,12 +6,19 @@ import TabHeader from './TabHeader';
 import styles from '../css/tabsContainer';
 
 const TabsContainer = (props) => {
+    const tabClick = (day, e) => {
+        return day;
+    };
+
     const tabHeaders = props.days.map((day) => {
+        const boundTabClick = tabClick.bind(this, day);
         return (
             <TabHeader
                 id={`${day.toLowerCase()}-tab`}
-                day={day.slice(0, 3)}
+                day={day}
+                dayAbbrev={day.slice(0, 3)}
                 key={props.days.indexOf(day) + 100}
+                onClick={boundTabClick}
             />
         );
     });

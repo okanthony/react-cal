@@ -9,7 +9,8 @@ class Calendar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isHidden: false
+            tabClicked: false,
+            currentTab: 'Monday'
         };
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     }
@@ -40,7 +41,7 @@ class Calendar extends React.Component {
                     id={`${day.toLowerCase()}-container`}
                     day={day}
                     key={this.props.days.indexOf(day) + 1}
-                    isHidden={day === 'Monday' ? false : this.state.isHidden}
+                    tabClicked={this.state.tabClicked}
                 />
             );
         });
