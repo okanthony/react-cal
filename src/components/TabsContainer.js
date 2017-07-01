@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 // components
 import TabHeader from './TabHeader';
 // styles
-import styles from '../css/tabsContainer.css';
+import styles from '../css/tabsContainer';
 
 const TabsContainer = (props) => {
     const tabHeaders = props.days.map((day) => {

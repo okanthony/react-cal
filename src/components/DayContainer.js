@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import DayHeader from './DayHeader';
 import TimeBlock from './TimeBlock';
 // styles
-import styles from '../css/dayContainer.css';
+import styles from '../css/dayContainer';
 
 const DayContainer = (props) => {
     const times = [

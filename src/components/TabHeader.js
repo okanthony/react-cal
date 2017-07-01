@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 // styles
-import styles from '../css/tabHeader.css';
+import styles from '../css/tabHeader';
 
 const TabHeader = (props) => {
     return (

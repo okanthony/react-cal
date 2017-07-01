@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 // components
 import DayContainer from './DayContainer';
 // styles
-import styles from '../css/calendar.css';
+import styles from '../css/calendar';
 
 class Calendar extends React.Component {
     constructor(props) {

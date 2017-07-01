@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 // styles
-import styles from '../css/timeBlock.css';
+import styles from '../css/timeBlock';
 
 const TimeBlock = (props) => {
     return (

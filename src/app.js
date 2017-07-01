@@ -3,7 +3,7 @@ import React from 'react';
 import Calendar from './components/Calendar';
 import TabsContainer from './components/TabsContainer';
 // styles
-import styles from './css/app.css';
+import styles from './css/app';
 
 const App = () => {
     const days = [

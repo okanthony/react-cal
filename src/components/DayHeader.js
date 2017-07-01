@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 // styles
-import styles from '../css/dayHeader.css';
+import styles from '../css/dayHeader';
 
 const DayHeader = (props) => {
     return (

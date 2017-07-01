@@ -36,6 +36,9 @@ module.exports = {
         }
     ]
   },
+  resolve: {
+      extensions: ['.js', '.jsx', '.css']
+  },
   devtool: 'eval-source-map',
   devServer: {
     contentBase: './build',
