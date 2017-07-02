@@ -5,57 +5,29 @@ import DayContainer from './DayContainer';
 // styles
 import styles from '../css/calendar';
 
-class Calendar extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            tabClicked: false,
-            currentTab: 'Monday'
-        };
-        this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
-    }
-
-    componentWillMount() {
-        if (window.matchMedia('(max-width: 550px)').matches) {
-            this.setState({ isHidden: true });
-        }
-        window.addEventListener('resize', this.updateWindowDimensions);
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('resize', this.updateWindowDimensions);
-    }
-
-    updateWindowDimensions() {
-        let isHidden = false;
-        if (window.matchMedia('(max-width: 550px)').matches) {
-            isHidden = true;
-        }
-        this.setState({ isHidden });
-    }
-
-    render() {
-        const dayContainers = this.props.days.map((day) => {
-            return (
-                <DayContainer
-                    id={`${day.toLowerCase()}-container`}
-                    day={day}
-                    key={this.props.days.indexOf(day) + 1}
-                    tabClicked={this.state.tabClicked}
-                />
-            );
-        });
-
+const Calendar = (props) => {
+    const dayContainers = props.days.map((day) => {
         return (
-            <div className={styles.calendar}>
-                {dayContainers}
-            </div>
+            <DayContainer
+                id={`${day.toLowerCase()}-container`}
+                day={day}
+                key={props.days.indexOf(day) + 1}
+                tabClicked={props.tabClicked}
+                currentTab={props.currentTab}
+            />
         );
-    }
-}
+    });
+
+    return (
+        <div className={styles.calendar}>
+            {dayContainers}
+        </div>
+    );
+};
 
 export default Calendar;
 
 Calendar.propTypes = {
-    days: PropTypes.arrayOf(PropTypes.string).isRequired
+    days: PropTypes.arrayOf(PropTypes.string).isRequired,
+    currentTab: PropTypes.string.isRequired
 };

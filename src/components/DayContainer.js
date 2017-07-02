@@ -25,7 +25,7 @@ const DayContainer = (props) => {
     });
 
     let containerStyle = `${styles.dayContainer}`;
-    if (!props.tabClicked && props.day === 'Monday') {
+    if (!props.tabClicked && props.currentTab === props.day) {
         containerStyle += ` ${styles.activeDayContainer}`;
     } else if (!props.tabClicked) {
         containerStyle += ` ${styles.hiddenDayContainer}`;
@@ -45,5 +45,6 @@ export default DayContainer;
 
 DayContainer.propTypes = {
     tabClicked: PropTypes.bool.isRequired,
+    currentTab: PropTypes.string.isRequired,
     day: PropTypes.string.isRequired
 };
