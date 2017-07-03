@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 // styles
 import styles from '../css/timeBlock';
 
-const TimeBlock = (props) => {
+const TimeBlock = ({ time }) => {
     return (
         <div className={styles.timeBlock}>
-            {props.time}
+            {time}
         </div>
     );
 };

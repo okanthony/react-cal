@@ -5,15 +5,14 @@ import DayContainer from './DayContainer';
 // styles
 import styles from '../css/calendar';
 
-const Calendar = (props) => {
-    const dayContainers = props.days.map((day) => {
+const Calendar = ({ days, currentTab }) => {
+    const dayContainers = days.map((day) => {
         return (
             <DayContainer
                 id={`${day.toLowerCase()}-container`}
                 day={day}
-                key={props.days.indexOf(day) + 1}
-                tabClicked={props.tabClicked}
-                currentTab={props.currentTab}
+                key={days.indexOf(day) + 1}
+                currentTab={currentTab}
             />
         );
     });

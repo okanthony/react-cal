@@ -6,7 +6,7 @@ import TimeBlock from './TimeBlock';
 // styles
 import styles from '../css/dayContainer';
 
-const DayContainer = (props) => {
+const DayContainer = ({ currentTab, day }) => {
     const times = [
         '5:00PM',
         '5:30PM',
@@ -25,17 +25,15 @@ const DayContainer = (props) => {
     });
 
     let containerStyle = `${styles.dayContainer}`;
-    if (!props.tabClicked && props.currentTab === props.day) {
+    if (currentTab === day) {
         containerStyle += ` ${styles.activeDayContainer}`;
-    } else if (!props.tabClicked) {
+    } else {
         containerStyle += ` ${styles.hiddenDayContainer}`;
     }
 
     return (
         <div className={containerStyle}>
-            <DayHeader
-                {...props}
-            />
+            <DayHeader day={day} />
             {timeBlocks}
         </div>
     );
@@ -44,7 +42,6 @@ const DayContainer = (props) => {
 export default DayContainer;
 
 DayContainer.propTypes = {
-    tabClicked: PropTypes.bool.isRequired,
     currentTab: PropTypes.string.isRequired,
     day: PropTypes.string.isRequired
 };

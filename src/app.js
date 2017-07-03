@@ -1,18 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
 // components
 import Calendar from './components/Calendar';
 import TabsContainer from './components/TabsContainer';
 // styles
 import styles from './css/app';
 
-class App extends React.Component {
+class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            tabClicked: false,
             currentTab: 'Monday'
         };
         this.tabClick = this.tabClick.bind(this);
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        if (this.state.currentTab !== nextState.currentTab) {
+            return true;
+        }
+        return false;
     }
 
     tabClick(day) {
@@ -38,7 +44,6 @@ class App extends React.Component {
                 />
                 <Calendar
                     days={days}
-                    tabClicked={this.state.tabClicked}
                     currentTab={this.state.currentTab}
                 />
             </div>

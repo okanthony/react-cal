@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 // styles
 import styles from '../css/dayHeader';
 
-const DayHeader = (props) => {
+const DayHeader = ({ day }) => {
     return (
         <div
             className={styles.dayHeader}
-            id={`${props.day.toLowerCase()}-header`}
+            id={`${day.toLowerCase()}-header`}
         >
             <span>
-                {props.day}
+                {day}
             </span>
         </div>
     );

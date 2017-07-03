@@ -1,14 +1,14 @@
 .calendar {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 
 .calendar > * {
-  order: 9999;
+    order: 9999;
 }
 
 @media all and (max-width: 550px) {
-  .calendar {
-    flex-direction: column;
-  }
+    .calendar {
+        flex-direction: column;
+    }
 }
