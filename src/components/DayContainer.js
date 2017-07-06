@@ -2,23 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // components
 import DayHeader from './DayHeader';
-import TimeBlock from './TimeBlock';
+import LessonBlock from './LessonBlock';
 // styles
 import styles from '../css/dayContainer';
 
-const DayContainer = ({ currentTab, day }) => {
-    const times = [
-        '5:00PM',
-        '5:30PM',
-        '6:00PM',
-        '6:30PM',
-        '7:00PM'
-    ];
-
-    const timeBlocks = times.map((time) => {
+const DayContainer = ({ currentTab, times, day }) => {
+    const lessonBlocks = times.map((time) => {
         return (
-            <TimeBlock
-                time={time}
+            <LessonBlock
                 key={times.indexOf(time) + 10}
             />
         );
@@ -34,7 +25,7 @@ const DayContainer = ({ currentTab, day }) => {
     return (
         <div className={containerStyle}>
             <DayHeader day={day} />
-            {timeBlocks}
+            {lessonBlocks}
         </div>
     );
 };
@@ -43,5 +34,6 @@ export default DayContainer;
 
 DayContainer.propTypes = {
     currentTab: PropTypes.string.isRequired,
+    times: PropTypes.arrayOf(PropTypes.string).isRequired,
     day: PropTypes.string.isRequired
 };

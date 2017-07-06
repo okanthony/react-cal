@@ -36,6 +36,16 @@ class App extends Component {
             'Saturday'
         ];
 
+        const times = [
+            '5:00PM',
+            '5:30PM',
+            '6:00PM',
+            '6:30PM',
+            '7:00PM',
+            '7:30PM',
+            '8:00PM'
+        ];
+
         return (
             <div className={styles.wrapper}>
                 <TabsContainer
@@ -44,6 +54,7 @@ class App extends Component {
                 />
                 <Calendar
                     days={days}
+                    times={times}
                     currentTab={this.state.currentTab}
                 />
             </div>
