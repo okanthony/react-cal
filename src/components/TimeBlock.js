@@ -1,18 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 // styles
-import styles from '../css/timeBlock';
+import styles from '../css/timeLabel';
 
-const TimeBlock = ({ time }) => {
+const TimeBlock = ({ lesson }) => {
     return (
-        <div className={styles.timeBlock}>
-            {time}
+        <div
+            className={styles.timeBlock}
+        >
+            {lesson ? lesson[0].lessonDuration : null}
         </div>
     );
 };
 
 export default TimeBlock;
 
+TimeBlock.defaultProps = {
+    lesson: null
+};
+
 TimeBlock.propTypes = {
-    time: PropTypes.string.isRequired
+    lesson: PropTypes.arrayOf(PropTypes.object)
 };

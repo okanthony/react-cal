@@ -2,12 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // components
 import DayContainer from './DayContainer';
-import TimeBlocksContainer from './TimeBlocksContainer';
+import TimeLabelsContainer from './TimeLabelsContainer';
+// data
+import data from '../constants/data';
 // styles
 import styles from '../css/calendar';
 
 const Calendar = ({ days, times, currentTab }) => {
     const dayContainers = days.map((day) => {
+        const lessons = data.filter(obj => obj.lessonDay === day);
+
         return (
             <DayContainer
                 id={`${day.toLowerCase()}-container`}
@@ -15,13 +19,14 @@ const Calendar = ({ days, times, currentTab }) => {
                 key={days.indexOf(day) + 1}
                 times={times}
                 currentTab={currentTab}
+                {...(lessons.length && { lessons })}
             />
         );
     });
 
     return (
         <div className={styles.calendar}>
-            <TimeBlocksContainer times={times} />
+            <TimeLabelsContainer times={times} />
             {dayContainers}
         </div>
     );

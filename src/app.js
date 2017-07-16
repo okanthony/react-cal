@@ -37,13 +37,13 @@ class App extends Component {
         ];
 
         const times = [
-            '5:00PM',
-            '5:30PM',
-            '6:00PM',
-            '6:30PM',
-            '7:00PM',
-            '7:30PM',
-            '8:00PM'
+            '1:00PM',
+            '1:30PM',
+            '2:00PM',
+            '2:30PM',
+            '3:00PM',
+            '3:30PM',
+            '4:00PM'
         ];
 
         return (

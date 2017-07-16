@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 // components
-import TimeBlock from './TimeBlock';
+import TimeLabel from './TimeLabel';
 import TimeHeader from './TimeHeader';
 // styles
-import styles from '../css/timeBlocksContainer';
+import styles from '../css/timeLabelsContainer';
 
-const TimeBlocksContainer = ({ times }) => {
+const TimeLabelsContainer = ({ times }) => {
     const timeBlocks = times.map((time) => {
         return (
-            <TimeBlock
+            <TimeLabel
                 time={time}
                 key={times.indexOf(time) + 10}
             />
@@ -24,8 +24,8 @@ const TimeBlocksContainer = ({ times }) => {
     );
 };
 
-export default TimeBlocksContainer;
+export default TimeLabelsContainer;
 
-TimeBlocksContainer.propTypes = {
+TimeLabelsContainer.propTypes = {
     times: PropTypes.arrayOf(PropTypes.string).isRequired
 };
