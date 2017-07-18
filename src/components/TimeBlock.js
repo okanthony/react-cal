@@ -1,14 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// components
+import LessonBlock from './LessonBlock';
 // styles
 import styles from '../css/timeLabel';
 
 const TimeBlock = ({ lesson }) => {
     return (
-        <div
-            className={styles.timeBlock}
-        >
-            {lesson ? lesson[0].lessonDuration : null}
+        <div className={styles.timeBlock}>
+            {lesson
+                && <LessonBlock lesson={lesson[0]} />
+            }
         </div>
     );
 };

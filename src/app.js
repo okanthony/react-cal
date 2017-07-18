@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 // components
 import Calendar from './components/Calendar';
 import TabsContainer from './components/TabsContainer';
@@ -9,7 +10,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentTab: 'Monday'
+            currentTab: moment().format('dddd')
         };
         this.tabClick = this.tabClick.bind(this);
     }
@@ -26,15 +27,13 @@ class App extends Component {
     }
 
     render() {
-        const days = [
-            'Sunday',
-            'Monday',
-            'Tuesday',
-            'Wednesday',
-            'Thursday',
-            'Friday',
-            'Saturday'
-        ];
+        const todaysDate = moment();
+        const nextSixDays = [...Array(6)];
+        const days = [todaysDate.format('dddd')];
+
+        nextSixDays.forEach(() => {
+            days.push(todaysDate.add(1, 'days').format('dddd'));
+        });
 
         const times = [
             '1:00PM',
