@@ -1,10 +1,7 @@
 .calendar {
-    display: flex;
-    flex-direction: row;
-}
-
-.calendar > * {
-    order: 9999;
+    display: grid;
+    grid-template-columns: 100px repeat(7, 1fr);
+    height: 500px;
 }
 
 @media all and (max-width: 550px) {

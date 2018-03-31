@@ -1,6 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-// styles
 import styles from '../css/timeHeader';
 
 const TimeHeader = () => {
@@ -14,7 +12,3 @@ const TimeHeader = () => {
 };
 
 export default TimeHeader;
-
-// TimeBlock.propTypes = {
-//     time: PropTypes.string.isRequired
-// };

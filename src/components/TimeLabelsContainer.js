@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import TimeLabel from './TimeLabel';
 import TimeHeader from './TimeHeader';
 // styles
-import styles from '../css/timeLabelsContainer';
+import styles from '../css/dayContainer';
 
 const TimeLabelsContainer = ({ times }) => {
     const timeBlocks = times.map((time) => {
@@ -17,7 +17,7 @@ const TimeLabelsContainer = ({ times }) => {
     });
 
     return (
-        <div className={styles.timeBlocksContainer}>
+        <div className={styles.dayContainer}>
             <TimeHeader />
             {timeBlocks}
         </div>
